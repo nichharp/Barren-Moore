@@ -1,0 +1,53 @@
+50x50 grid array
+[][] determines x,y position
+and if i pre assign encounters and treasure in specfic spots
+
+
+   0 1 2 3 4 5 6 7 8 9 x
+
+0  7 7 7 7 7 7 7 7 7 7  
+1  7 0 0 0 0 0 0 0 0 7
+2  7 0 0 0 2 0 0 0 0 7 
+3  7 0 0 0 0 0 0 0 0 7
+4  7 0 0 0 9 0 1 0 0 7
+5  7 0 0 0 0 0 0 0 0 7
+6  7 0 0 0 2 0 0 0 0 7 
+7  7 0 0 0 0 0 0 0 0 7
+8  7 0 0 0 0 0 0 0 8 7
+9  7 7 7 7 7 7 7 7 7 7 
+y
+
+0 is nothing
+1 is knife
+2 is goblin
+7 is boundary
+8 is treasure
+9 is start
+
+//ROMAN CATHOLIC
+
+soh cah toa
+
+Map (x,y) contains the grid above
+Movements (x,y) contains all the movements the player has done.
+
+45
+135
+225
+315
+
+
+
+
+p1 is the object that contains your position(x,y)
+
+Start Adventure:
+	"welcome"
+	"find the gold"
+	reset map
+	ask for movement
+	
+
+
+
+8,9 has the man
