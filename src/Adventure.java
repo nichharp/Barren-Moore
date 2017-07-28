@@ -32,23 +32,23 @@ public class Adventure {
 		boolean restricted = false;
 //		checkPosition(Map);
 		for (int i = 0; i<15;i++){
-		if (restricted ==false) {
-			askForMovement(Map, Move, numOfMoves);
-			whatEncounter(Map,Move, numOfMoves, health);
-		} else {
-			System.out.println(Move[numOfMoves][0] + Move[numOfMoves][1]);
-			int x =Move[numOfMoves][0]; int y=Move[numOfMoves][1];
-			if (x==0) {
-				System.out.println("You cannot move West");
-			} else if (x==9) {
-				System.out.println("You cannot move East");
-			} else if (y == 0) {
-				System.out.println("You cannot move North");
-			} else if (y == 9) {
-				System.out.println("You cannot move South");
-			} // restricted askForMovement
-			
-		}numOfMoves++;
+			if (restricted ==false) {
+				askForMovement(Map, Move, numOfMoves);
+				whatEncounter(Map,Move, numOfMoves, health);
+			} else {
+				System.out.println(Move[numOfMoves][0] + Move[numOfMoves][1]);
+				int x =Move[numOfMoves][0]; int y=Move[numOfMoves][1];
+				if (x==0) {
+					System.out.println("You cannot move West");
+				} else if (x==9) {
+					System.out.println("You cannot move East");
+				} else if (y == 0) {
+					System.out.println("You cannot move North");
+				} else if (y == 9) {
+					System.out.println("You cannot move South");
+				} // restricted askForMovement
+				
+			}numOfMoves++;
 		}
 	}
 	
@@ -191,14 +191,15 @@ public class Adventure {
 			System.out.println("Sneak up on him?");
 			boolean yn=yesNo();
 			if (yn==true) {
-				random = rand.nextInt(1);
+				random = rand.nextInt(2);
 				if (random ==1) {
 					System.out.println("You successfully sneak up on him");
+					
+					
 					System.out.println("Stab him in the back?");
 					yn = yesNo();
 					if (yn == true) {
 						random = rand.nextInt(1);
-						if (random ==1) {
 							System.out.println("You stab him. Blood pours out of his back. Thicker than most");
 							System.out.println("You take the vile he had in his hand");
 							System.out.println("Do you drink the vile?");
@@ -210,14 +211,22 @@ public class Adventure {
 								System.out.println("You've won");
 								System.exit(0);
 							} else {
-								
+								System.out.println("You refuse to drink the vile");
+								System.out.println("Maybe poison is the better way to die");
+								System.out.println("You die");
+								System.out.println("The End");
+								System.exit(0);
 							}
+						} else {
+							System.out.println("He turns around and punches you. He knew you were there.");
+							System.out.println("You die");
+							System.out.println("The End");
 						}
-					}
 				} else {
 					System.out.println("You fail to sneak, he hears you and swings his fist at you");
 					System.out.println("What do you do?");
-					dodge();
+					int h = dodge();
+					health =- h;
 				}
 			} else {
 				System.out.println("He looks straight at you. He now sees you");
